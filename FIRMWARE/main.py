@@ -1,5 +1,5 @@
 '''
-SwiftPad
+RUBIX CUBE MARCOPAD
 '''
 import board
 import busio
@@ -26,9 +26,28 @@ keyboard.col_pins = (COL0, COL1, COL2)
 keyboard.row_pins = (ROW0, ROW1, ROW2)
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
+EXTRUDE = KC.LCTL(KC.SHIFT, KC.E)      # Extrude
+EXTRUDE_CUT = KC.LCTL(KC.SHIFT, KC.X)  # Extrude Cut
+SKETCH = KC.LCTL(KC.SHIFT, KC.K)       # Start Sketch
+DIMENSION = KC.LCTL(KC.SHIFT, KC.D)    # Dimension Tool
+LINE = KC.L                            # Line Tool
+CIRCLE = KC.LCTL(KC.SHIFT, KC.I)       # Circle Tool
+RECT = KC.LCTL(KC.SHIFT, KC.R)         # Rectangle Tool
+FILLET = KC.LCTL(KC.SHIFT, KC.F)       # Fillet Tool
+NORMAL_TO = KC.LCTL(KC.SHIFT, KC.N)    # Normal To Tool
+
 # Keymap
 keyboard.keymap = [
-    [KC.LCTRL(KC.TAB)]
+    [LINE,
+    CIRCLE,
+    RECT,
+    SKETCH,
+    EXTRUDE_CUT,
+    EXTRUDE,
+    FILLET,
+    NORMAL_TO,
+    DIMENSION]
+]
 
 if __name__ == '__main__':
     keyboard.go()
